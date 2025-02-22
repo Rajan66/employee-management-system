@@ -1,8 +1,13 @@
+import Table from '@/components/common/Table'
+import SidebarComponent from '@/components/dashboard/Sidebar'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Dashboard page</div>
+    <div> 
+      <Table />  
+      <SidebarComponent />
+    </div>
   )
 }
 
