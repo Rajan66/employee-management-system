@@ -22,15 +22,15 @@ export default function SidebarComponent() {
           <h2 className="text-heading text-2xl">EMS</h2>
         </SidebarHeader>
         <SidebarContent>
-          <SidebarGroup>
-            <SidebarGroupContent className="ml-3 p-2">
-              <SidebarMenu className="gap-5">
+          <SidebarGroup className="p-0">
+            <SidebarGroupContent >
+              <SidebarMenu className="gap-5 px-10">
                 {sidebarItems.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild className="text-base">
+                  <SidebarMenuItem key={item.title} >
+                    <SidebarMenuButton asChild className="text-base p-2">
                       <a href={item.url}>
-                        <item.icon />
-                        <span className="p-3 text-md">{item.title}</span>
+                        <item.icon className="text-slate-400"/>
+                        <span className="p-3 text-md text-slate-400 ">{item.title}</span>
                       </a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
