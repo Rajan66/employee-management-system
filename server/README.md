@@ -28,7 +28,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-(Swagger (API Docs))[http://127.0.0.1:8000/swagger/]
-(Admin Dashboard)[http://127.0.0.1:8000/admin/]
+[Swagger (API Docs)](http://127.0.0.1:8000/swagger/) <br/>
+[Admin Dashboard](http://127.0.0.1:8000/admin/) <br/>
 
 **Note: Use Ctrl + C in the terminal to stop the server**
