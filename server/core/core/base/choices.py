@@ -8,6 +8,12 @@ class AttendanceChoices(models.TextChoices):
     LEAVE = "LEAVE"
     HOLIDAY = "HOLIDAY"
 
+class LeaveChoices(models.TextChoices):
+    PENDING = "PENDING"
+    APPROVED = "APPROVED"
+    REJECTED = "REJECTED"
+    CANCELLED = "CANCELLED"
+
 
 class SalaryPaymentStatus(models.TextChoices):
     PENDING = "PENDING"
