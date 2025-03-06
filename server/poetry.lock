@@ -12,6 +12,9 @@ files = [
     {file = "asgiref-3.8.1.tar.gz", hash = "sha256:c343bd80a0bec947a9860adb4c432ffa7db769836c64238fc34bdc3fec84d590"},
 ]
 
+[package.dependencies]
+typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
+
 [package.extras]
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
@@ -83,20 +86,6 @@ files = [
 Django = ">=4.2"
 
 [[package]]
-name = "django-rest-framework"
-version = "0.1.0"
-description = "alias."
-optional = false
-python-versions = "*"
-groups = ["main"]
-files = [
-    {file = "django-rest-framework-0.1.0.tar.gz", hash = "sha256:47a8f496fa69e3b6bd79f68dd7a1527d907d6b77f009e9db7cf9bb21cc565e4a"},
-]
-
-[package.dependencies]
-djangorestframework = "*"
-
-[[package]]
 name = "djangorestframework"
 version = "3.15.2"
 description = "Web APIs for Django, made easy."
@@ -126,6 +115,7 @@ files = [
 [package.dependencies]
 marshmallow = ">=3.18.0"
 python-dotenv = "*"
+typing-extensions = {version = "*", markers = "python_version < \"3.11\""}
 
 [package.extras]
 dev = ["environs[tests]", "pre-commit (>=4.0,<5.0)", "tox"]
@@ -247,5 +237,5 @@ files = [
 
 [metadata]
 lock-version = "2.1"
-python-versions = "^3.11"
-content-hash = "42110e7e7d7a70df688663a13b9479c00698274541de9bb28059abb0c1d16b39"
+python-versions = ">=3.10,<4.0"
+content-hash = "5e1d9b7d12e867a0a05fceb29736977783a9bac5f5084dc9ba88e0bc16c83d3e"
