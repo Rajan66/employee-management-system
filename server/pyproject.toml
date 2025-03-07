@@ -1,21 +1,28 @@
-[tool.poetry]
+[project]
 name = "server"
 version = "0.1.0"
 description = ""
-authors = ["Rajan66 <rajanmaharjan042@gmail.com>"]
+authors = [
+    {name = "Rajan66", email = "rajanmaharjan042@gmail.com"}
+]
 readme = "README.md"
+requires-python = ">=3.10,<4.0"  # Restrict Python version to >=3.10 and <4
 
-[tool.poetry.dependencies]
-python = "^3.12"
-django = "^5.1.6"
-django-rest-framework = "^0.1.0"
-environs = "^14.1.1"
-psycopg = "^3.2.5"
-django-cors-headers = "^4.7.0"
-djangorestframework = "^3.15.2"
-django-filter = "^25.1"
+dependencies = [
+    "django (>=5.1.6,<6.0.0)",
+    "djangorestframework (>=3.15.2,<4.0.0)",
+    "environs (>=14.1.1,<15.0.0)",
+    "psycopg (>=3.2.5,<4.0.0)",
+    "django-cors-headers (>=4.7.0,<5.0.0)",
+    "django-filter (>=25.1,<26.0.0)",
+    "django-extensions (>=3.2.3,<4.0.0)",
+    "drf-yasg (>=1.21.9,<2.0.0)"
+]
 
+[tool.poetry]
+packages = [{include = "server", from = "src"}]
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+

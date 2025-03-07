@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework.filters import OrderingFilter, SearchFilter
+from rest_framework.pagination import PageNumberPagination
 
-# Create your views here.
+from employees.models import Employee
+from employees.serializers import EmployeeSerializer
+
+
+class EmployeeViewSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+    pagination_class = PageNumberPagination
+    filter_backends = [OrderingFilter, SearchFilter]
