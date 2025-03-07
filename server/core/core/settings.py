@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "rest_framework_simplejwt",
     "django_extensions",
     "corsheaders",
     "departments",
@@ -86,17 +87,22 @@ MIDDLEWARE = [
 ]
 #
 REST_FRAMEWORK = {
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination"
-    #     'DEFAULT_AUTHENTICATION_CLASSES': (
-    #         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    #     ),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),  # 15 minutes for access token
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),  # 7 days for refresh token
-    # 'ROTATE_REFRESH_TOKENS': True,                    # Rotate refresh tokens after use
-    # 'BLACKLIST_AFTER_ROTATION': True,                 # Blacklist refresh tokens after rotation
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=15),  # 15 minutes for access token
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),  # 1 days for refresh token
+    "ROTATE_REFRESH_TOKENS": True,  # Rotate refresh tokens after use
+    "BLACKLIST_AFTER_ROTATION": True,  # Blacklist refresh tokens after rotation
+    "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
+    "SLIDING_TOKEN_LIFETIME": timedelta(days=30),
+    "SLIDING_TOKEN_REFRESH_LIFETIME_LATE_USER": timedelta(days=1),
+    "SLIDING_TOKEN_LIFETIME_LATE_USER": timedelta(days=30),
 }
 
 ROOT_URLCONF = "core.urls"
