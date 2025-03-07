@@ -1,6 +1,5 @@
-from django.db import models
 from core.base.models import BaseModel
-from departments.models import Department
+from django.db import models
 from django.utils import timezone
 
 
@@ -10,7 +9,11 @@ class Project(BaseModel):
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
     team = models.ForeignKey(
-        'teams.Team', on_delete=models.SET_NULL, null=True, blank=True, related_name="projects"
+        "teams.Team",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="projects",
     )
 
     def __str__(self):

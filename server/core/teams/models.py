@@ -5,9 +5,6 @@ from employees.models import Employee
 
 class Team(BaseModel):
     name = models.CharField(max_length=255, unique=True)
-    # department = models.ForeignKey(
-    #     Department, on_delete=models.CASCADE, related_name="teams"
-    # )
     lead = models.ForeignKey(
         Employee,
         on_delete=models.SET_NULL,
@@ -18,4 +15,4 @@ class Team(BaseModel):
     members = models.ManyToManyField(Employee, related_name="teams", blank=True)
 
     def __str__(self):
-        return f"{self.name} ({self.department.name})"
+        return f"{self.name}"
