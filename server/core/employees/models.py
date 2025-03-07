@@ -1,9 +1,9 @@
 from core.base.choices import AttendanceChoices, LeaveChoices, SalaryPaymentStatus
 from core.base.models import BaseModel
+from departments.models import Department
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 from django.db import models
-from projects.models import Department
 
 
 class Employee(BaseModel):
@@ -22,9 +22,9 @@ class Employee(BaseModel):
         blank=True,
         related_name="employees",
     )
-    designation = models.CharField(max_length=50,default="Full Stack Developer")
-    address = models.CharField(max_length=150,blank=True,default="")
-    phone = models.CharField(max_length=10,blank=True,default="")
+    designation = models.CharField(max_length=50, default="Full Stack Developer")
+    address = models.CharField(max_length=150, blank=True, default="")
+    phone = models.CharField(max_length=10, blank=True, default="")
 
     def __str__(self):
         return f"{self.user.username} - {self.role.title if self.role else 'No Role'}"
@@ -62,26 +62,28 @@ class SalaryPayment(BaseModel):
 
 class Attendance(BaseModel):
     employee = models.ForeignKey(
-        Employee, on_delete=models.CASCADE, related_name="attendances",null=True
+        Employee, on_delete=models.CASCADE, related_name="attendances", null=True
     )
     date = models.DateTimeField()
     check_in_time = models.DateTimeField()
     check_out_time = models.DateTimeField(blank=True, null=True)
     work_hours = models.FloatField(blank=True, null=True)
-    status = models.CharField(max_length=10,
-        choices=AttendanceChoices, default=AttendanceChoices.PRESENT
+    status = models.CharField(
+        max_length=10, choices=AttendanceChoices, default=AttendanceChoices.PRESENT
     )
 
 
 class Leave(BaseModel):
     employee = models.ForeignKey(
-        Employee, on_delete=models.CASCADE, related_name="leaves",null=True
+        Employee, on_delete=models.CASCADE, related_name="leaves", null=True
     )
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     duration = models.FloatField(blank=True, null=True)
     reason = models.TextField(blank=True)
-    status = models.CharField(max_length=10,choices=LeaveChoices, default=LeaveChoices.PENDING)
+    status = models.CharField(
+        max_length=10, choices=LeaveChoices, default=LeaveChoices.PENDING
+    )
     approved_by = models.ForeignKey(
         Employee,
         on_delete=models.SET_NULL,
