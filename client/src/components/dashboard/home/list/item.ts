@@ -2,17 +2,17 @@ import { House, CalendarCheck, CalendarOff, ChartNoAxesColumnIncreasing } from "
 export const sidebarItems = [
     { 
         title: "Home",
-        url: "#",
+        url: "/dashboard",
         icon: House
     },
     { 
         title: "Attendance", 
-        url: "#",
+        url: "/dashboard/attendance",
         icon: CalendarCheck
     },
     { 
         title: "Leave", 
-        url: "#",
+        url: "/dashboard/leave",
         icon: CalendarOff 
     },
     { 
