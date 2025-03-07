@@ -1,4 +1,4 @@
-import { House, CalendarCheck, CalendarOff, ChartNoAxesColumnIncreasing } from "lucide-react"
+import { House, CalendarCheck, CalendarOff, ChartNoAxesColumnIncreasing, Users, User } from "lucide-react"
 export const sidebarItems = [
     { 
         title: "Home",
@@ -16,8 +16,13 @@ export const sidebarItems = [
         icon: CalendarOff 
     },
     { 
-        title: "Reports", 
-        url: "#",
-        icon: ChartNoAxesColumnIncreasing
+        title: "Teams", 
+        url: "/dashboard/team",
+        icon: Users
+    },
+    { 
+        title: "Employees", 
+        url: "/dashboard/employee",
+        icon: User
     },
   ];

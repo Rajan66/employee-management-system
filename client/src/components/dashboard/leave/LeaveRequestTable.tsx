@@ -13,8 +13,8 @@ interface LeaveRequestTableProps {
 }
 
 export const LeaveRequestTable: React.FC<LeaveRequestTableProps> = ({ leaveRequests, openConfirmationDialog }) => (
-  <div className="rounded-lg overflow-hidden border border-gray-100">
-    <Table className="p-3">
+  <div className="w-full rounded-lg  border border-gray-100">
+    <Table className="p-6 w-full">
       <TableHeader className="bg-gray-50 dark:bg-zinc-950">
         <TableRow>
           <TableHead className="font-bold text-lg text-gray-500">Employee</TableHead>
