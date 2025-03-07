@@ -4,7 +4,7 @@ import { Users } from 'lucide-react';
 const EmployeeStatus = () => {
     return (
         <>
-            <Card>
+            <Card className="bg-slate-50 dark:bg-zinc-950">
                 <CardHeader>
                     <CardTitle className="flex items-center">
                         <Users className="mr-2 h-6 w-6" /> Employee Status
@@ -21,19 +21,19 @@ const EmployeeStatus = () => {
                         </div>
                         <div className="flex justify-between">
                             <span>Contract: {employeeStatusList.employeeStats.contract}</span>
-                            <span className="text-blue-500">
+                            <span className="text-green-500">
                                 {Math.round((employeeStatusList.employeeStats.contract / employeeStatusList.employeeStats.total) * 100)}%
                             </span>
                         </div>
                         <div className="flex justify-between">
                             <span>Probation: {employeeStatusList.employeeStats.probation}</span>
-                            <span className="text-yellow-500">
+                            <span className="text-green-500">
                                 {Math.round((employeeStatusList.employeeStats.probation / employeeStatusList.employeeStats.total) * 100)}%
                             </span>
                         </div>
                         <div className="flex justify-between">
                             <span>WFH: {employeeStatusList.employeeStats.wfh}</span>
-                            <span className="text-purple-500">
+                            <span className="text-green-500">
                                 {Math.round((employeeStatusList.employeeStats.wfh / employeeStatusList.employeeStats.total) * 100)}%
                             </span>
                         </div>
