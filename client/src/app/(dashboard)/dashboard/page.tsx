@@ -1,38 +1,29 @@
-// import Table from '@/components/common/Table'
-// import SidebarComponent from '@/components/dashboard/Sidebar'
-// import React from 'react'
-
-// const page = () => {
-//   return (
-//     <div> 
-//       <Table />  
-//       <SidebarComponent />
-//     </div>
-//   )
-// }
-
-// export default page
-
 import React from 'react';
-import RecentClockIn from '@/components/dashboard/recentClockIn';
-import AdminWelcome from '@/components/dashboard/AdminWelcome';
-import QuickStats from '@/components/dashboard/QuickStats';
-import EmployeeStatus from '@/components/dashboard/EmployeeStatus';
-import AttendanceOverview from '@/components/dashboard/AttendanceOverview';
-import EmployeeDepartment from '@/components/dashboard/EmployeeDepartment';
+import RecentClockIn from '@/components/dashboard/home/RecentClockIn';
+import AdminWelcome from '@/components/dashboard/home/AdminWelcome';
+import QuickStats from '@/components/dashboard/home/QuickStats';
+import EmployeeStatus from '@/components/dashboard/home/EmployeeStatus';
+import AttendanceOverview from '@/components/dashboard/home/AttendanceOverview';
+import EmployeeDepartment from '@/components/dashboard/home/EmployeeDepartment';
+
 const AdminDashboard = () => {
   return (
-    <div className="p-6 bg-gray-100 dark:bg-darkNavy min-h-screen">
-      <AdminWelcome />
-      <QuickStats />
+    <main className="px-4 min-h-screen space-y-6">
+      <section>
+        <AdminWelcome />
+        <QuickStats />
+      </section>
 
-      <div className="grid grid-cols-3 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <EmployeeStatus />
         <AttendanceOverview />
         <EmployeeDepartment />
-      </div>
-      <RecentClockIn />
-    </div>
+      </section>
+
+      <section>
+        <RecentClockIn />
+      </section>
+    </main>
   );
 };
 

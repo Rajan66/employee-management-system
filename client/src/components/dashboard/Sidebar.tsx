@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import logo from "@/app/favicon.ico";
-import { sidebarItems } from "./list/item";
+import { sidebarItems } from "./home/list/item";
 
 export default function SidebarComponent() {
   return (
@@ -27,10 +27,10 @@ export default function SidebarComponent() {
               <SidebarMenu className="gap-5 px-10">
                 {sidebarItems.map((item) => (
                   <SidebarMenuItem key={item.title} >
-                    <SidebarMenuButton asChild className="text-base p-2">
+                    <SidebarMenuButton asChild className="w-full text-base  text-foreground opacity-80 p-2 font-semibold hover:opacity-100 hover:bg-foreground/10">
                       <a href={item.url}>
-                        <item.icon className="text-slate-400"/>
-                        <span className="p-3 text-md text-slate-400 ">{item.title}</span>
+                        <item.icon className="text-start "/>
+                        <span className="p-3 text-md">{item.title}</span>
                       </a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
